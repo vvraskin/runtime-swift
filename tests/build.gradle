@@ -26,6 +26,11 @@ task testBlueDeployment(type: Test) {
     include 'runtime/system/**'
 }
 
+task testWithoutHostValidation(type: Test) {
+    exclude '**/Swift40SDKTests.class'
+    exclude '**/Swift41SDKTests.class'
+}
+
 dependencies {
     compile "org.scala-lang:scala-library:${gradle.scala.version}"
     compile "org.apache.openwhisk:openwhisk-tests:${gradle.openwhisk.version}:tests"
